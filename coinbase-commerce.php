@@ -1,10 +1,10 @@
 <?php
 /*
-Plugin Name:  Coinbase Commerce
+Plugin Name:  Coinbase Commerce, RENS EDITED SUBSCRIPTIONS
 Plugin URI:   https://github.com/coinbase/coinbase-commerce-woocommerce/
 Description:  A payment gateway that allows your customers to pay with cryptocurrency via Coinbase Commerce (https://commerce.coinbase.com/)
 Version:      1.1.4
-Author:       Coinbase Commerce
+Author:       Coinbase Commerce, RENS
 Author URI:   https://commerce.coinbase.com/
 License:      GPLv3+
 License URI:  https://www.gnu.org/licenses/gpl-3.0.html

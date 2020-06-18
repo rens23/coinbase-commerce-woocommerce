@@ -357,7 +357,8 @@ class WC_Gateway_Coinbase extends WC_Payment_Gateway {
 			} elseif ( 'UNRESOLVED' === $status ) {
 			    	if ($last_update['context'] === 'OVERPAID') {
                     			$order->update_status( 'processing', __( 'Coinbase payment was successfully processed.', 'coinbase' ) );
-                    			$order->payment_complete();
+								$order->payment_complete();
+								WC_Subscriptions_Manager::activate_subscriptions_for_order( $order );
                 		} else {
                     			// translators: Coinbase error status for "unresolved" payment. Includes error status.
                     			$order->update_status( 'failed', sprintf( __( 'Coinbase payment unresolved, reason: %s.', 'coinbase' ), $last_update['context'] ) );
@@ -369,7 +370,8 @@ class WC_Gateway_Coinbase extends WC_Payment_Gateway {
 				$order->add_order_note( __( 'Coinbase payment marked as resolved.', 'coinbase' ) );
             		} elseif ( 'COMPLETED' === $status ) {
                 		$order->update_status( 'processing', __( 'Coinbase payment was successfully processed.', 'coinbase' ) );
-                		$order->payment_complete();
+						$order->payment_complete();
+						WC_Subscriptions_Manager::activate_subscriptions_for_order( $order );
             		}
 		}
 
